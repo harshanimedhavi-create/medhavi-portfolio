@@ -1,0 +1,224 @@
+
+@import "../../_globalColor";
+
+.what-bring {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.what-bring-content {
+  width: 100%;
+}
+
+.what-bring-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.what-bring-label {
+  display: inline-block;
+  color: #4cc9f0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.talk-header-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #4cc9f0, #2a9d8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.talk-header-subtitle {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto;
+  color: $subTitle;
+}
+
+.talk-cards-div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.strength-card {
+  position: relative;
+  min-height: 255px;
+  padding: 30px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.strength-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.strength-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.strength-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.strength-card::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -65px;
+  top: -70px;
+  border-radius: 50%;
+  background: var(--card-color);
+  opacity: 0.10;
+  transition: transform 0.5s ease;
+}
+
+.strength-card:hover {
+  transform: translateY(-12px) !important;
+  border-color: var(--card-color);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.strength-card:hover::before {
+  transform: scale(1.8);
+}
+
+.strength-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.strength-number {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--card-color);
+}
+
+.strength-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--card-color) 15%, white);
+  font-size: 32px;
+  transition: transform 0.4s ease;
+}
+
+.strength-card:hover .strength-icon {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.strength-card h2 {
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #202b3c;
+}
+
+.strength-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #687386;
+  margin-bottom: 25px;
+}
+
+.strength-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  padding-top: 17px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--card-color);
+}
+
+.strength-arrow {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.strength-card:hover .strength-arrow {
+  transform: translate(5px, -5px);
+}
+
+.dark-bring .strength-card {
+  background: #171c28;
+  border-color: rgba(76, 201, 240, 0.15);
+}
+
+.dark-bring .strength-card h2 {
+  color: #ffffff;
+}
+
+.dark-bring .strength-card p {
+  color: #b6c0d0;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .what-bring {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .what-bring-heading {
+    margin-bottom: 35px;
+  }
+
+  .talk-header-title {
+    font-size: 34px;
+  }
+
+  .talk-header-subtitle {
+    font-size: 15px;
+    padding: 0 12px;
+  }
+
+  .talk-cards-div {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .strength-card {
+    min-height: 230px;
+    padding: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strength-card {
+    animation: none;
+    transition: none;
+  }
+}
